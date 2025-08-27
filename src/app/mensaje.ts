@@ -1,2 +1,4 @@
-export class Mensaje {
+export interface Mensaje {
+    titulo:string
+    cuerpo:string
 }

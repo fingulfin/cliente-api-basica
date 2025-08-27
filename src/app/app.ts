@@ -1,5 +1,9 @@
+
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+
+import { DataServicio } from './data-servicio';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +12,21 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('api-basica');
+
+
+  constructor(private dataService: DataServicio) { }
+  ngOnInit() {
+    console.log("Hola")
+    //  this.probar()
+  }
+  probar() {
+
+
+    this.dataService.getData().subscribe(datos => {
+      console.log("El request " + datos.cuerpo)
+    })
+
+  }
+
+  
 }
