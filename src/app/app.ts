@@ -23,7 +23,7 @@ export class App {
 
 
     this.dataService.getData().subscribe(datos => {
-      console.log("El request " + datos.cuerpo)
+      console.log("El request es: " + datos.cuerpo)
     })
 
   }
